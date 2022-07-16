@@ -78,7 +78,7 @@ const Home = () => {
                     <Link to = "/news" className='mr-2 text-black'>Show More</Link>
                   </Paragraph>
                </div>
-              <News />
+              <News simplified/>
              </div>
 
     </div>

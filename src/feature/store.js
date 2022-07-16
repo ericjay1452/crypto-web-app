@@ -1,15 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {FetchedCryptoApi} from "../Api/CryptoApi"
-import { CryptoNewsApiBing} from "../Api/CryptoNewsApi"
+import { cryptoNewsApi} from "../Api/CryptoNewsApi"
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 
 export const store = configureStore({
     reducer : {
       [FetchedCryptoApi.reducerPath] : FetchedCryptoApi.reducer,
 
-      [CryptoNewsApiBing.reducerPath] : CryptoNewsApiBing.reducer,
+      [cryptoNewsApi.reducerPath] : cryptoNewsApi.reducer,
     },
-    middleware: (getDefaultMiddleware) =>getDefaultMiddleware().concat(FetchedCryptoApi.middleware),
+    middleware: (getDefaultMiddleware) =>getDefaultMiddleware().concat(FetchedCryptoApi.middleware, cryptoNewsApi.middleware),
     
 })
 

@@ -1,11 +1,10 @@
-import {Link, Routes, Route} from "react-router-dom"
-import {Layout, Typography} from "antd"
+import {Routes, Route} from "react-router-dom"
+import {Layout} from "antd"
 import {Navbar, Home, Exchange, CryptoDetail, Cryptocurrencies, News} from "./components";
 
 
 function App() {
 
-  const { Paragraph } = Typography;
   return (<>
     <div className="flex">
 
@@ -32,7 +31,7 @@ function App() {
        </Layout>
 
 
-       <footer className = "bg-slate-900 w-full  fixed bottom-0">
+       {/* <footer className = "bg-slate-900 w-full  fixed bottom-0">
      <Paragraph className="text-center text-white p-2 white">
       All rights reserved created by Ilesanmi Erioluwa Victor
      </Paragraph>
@@ -42,7 +41,7 @@ function App() {
       <Link to = "/exchange" className="px-4 pb-2" target={"_blank"}>Exchange</Link>
       <Link to = "news" className="px-4 pb-2">News</Link>
     </div>
-    </footer>
+    </footer> */}
     {/* Footer */}
 
   </div>

@@ -1,9 +1,10 @@
 import React from 'react'
-// import millify from 'millify'
+import millify from 'millify'
 import { Typography, Row, Statistic,Col } from 'antd'
 import { Link } from 'react-router-dom'
 import {News, Cryptocurrencies } from "../components"
 import {useGetCryptosQuery } from "../Api/CryptoApi"
+import "../index.css"
 
 const Home = () => {
   const {Title, Paragraph} = Typography
@@ -28,28 +29,28 @@ const Home = () => {
       <div className='block w-2/12 h-1 bg-gray-900 mb-3 ml-2 rounded'></div> 
 
       <Row className = "text-center p-6 mb-2 bg-gray-400">
-        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer hover:bg-gray-200 hover:transition-all hover:rounded">
-          <Statistic value={total} title = "Total CryptoCurrencies" />
+        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
+          <Statistic value={millify(total)} title = "Total CryptoCurrencies" />
         </Col>
 
-        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer hover:bg-gray-200 hover:transition-all hover:rounded">
-          <Statistic value={totalExchanges} title = "Total Exchange" />
+        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
+          <Statistic value={millify (totalExchanges)} title = "Total Exchange" />
         </Col>
 
-        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer hover:bg-gray-200 hover:transition-all hover:rounded">
-          <Statistic value={totalMarketCap} title = "Total Market Cap" />
+        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
+          <Statistic value={millify (totalMarketCap)} title = "Total Market Cap" />
         </Col>
 
-        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer hover:bg-gray-200 hover:transition-all hover:rounded">
-          <Statistic value={total24hVolume} title = "Total 24h Volume" />
+        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
+          <Statistic value={millify(total24hVolume)} title = "Total 24h Volume" />
         </Col>
 
-        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer hover:bg-gray-200 hover:transition-all hover:rounded">
-          <Statistic value={totalMarkets} title = "Total Market" />
+        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
+          <Statistic value={millify(totalMarkets)} title = "Total Market" />
         </Col>
 
-        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer hover:bg-gray-200 hover:transition-all hover:rounded">
-          <Statistic value={totalCoins} title = "Total CryptoCurrencies" />
+        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
+          <Statistic value={millify(totalCoins)} title = "Total CryptoCurrencies" />
         </Col>
       </Row>
        

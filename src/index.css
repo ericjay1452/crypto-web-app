@@ -36,3 +36,11 @@ a {
 .white {
   color: white !important;
 }
+
+.effectHover:hover {
+  background : rgba(255, 255, 255, .1)
+}
+
+.effectHover2:hover {
+  background : rgba(83, 82, 82, 0.7)
+}

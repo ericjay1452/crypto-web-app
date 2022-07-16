@@ -2,7 +2,7 @@ import React from 'react'
 import {Link } from "react-router-dom"
 import Logo from "../constant/Binance-Logo.svg"
 import { MenuDta } from '../Data/MenuData'
-import {Button, Avatar} from "antd"
+import {Avatar} from "antd"
 import "../index.css"
 
 const Navbar = () => {

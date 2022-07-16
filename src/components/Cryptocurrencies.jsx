@@ -44,10 +44,11 @@ const Cryptocurrencies = ({simplified}) => {
         {
           cryptos?.map( (currency) =>{
             const {uuid, rank, name, iconUrl, price, marketCap, change} = currency;
+            
                return (
-            <Col  xs = {24} sm={12} lg = {4}  key={uuid} className = "m-1">
-              <Link to = {`/cryptodetail/${uuid}`}>
-                <Card className= "hover:transition-all hover:bg-gray-400 rounded-3xl"
+            <Col  xs = {24} sm={12} lg = {4}  key={uuid} className = "m-1 effectHover2">
+              <Link to = {`/cryptodetail/${uuid}`} className = "effectHover">
+                <Card className= "hover:transition-all rounded-3xl"
                 extra = {<img src = {`${iconUrl}` || `${defaultImg}`} alt = {`${name}`} id = "img2" className ="max-w-full w-full"/> }
                 title = {`${rank} . ${name}`}
                 hoverable

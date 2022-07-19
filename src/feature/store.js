@@ -8,6 +8,7 @@ export const store = configureStore({
       [FetchedCryptoApi.reducerPath] : FetchedCryptoApi.reducer,
 
       [cryptoNewsApi.reducerPath] : cryptoNewsApi.reducer,
+      
     },
     middleware: (getDefaultMiddleware) =>getDefaultMiddleware().concat(FetchedCryptoApi.middleware, cryptoNewsApi.middleware),
     

@@ -1,13 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import millify from 'millify'
-import { Card, Row,Col, Input } from 'antd'
+import { Card, Row,Col, Input, Typography } from 'antd'
 import { useGetCryptosQuery } from '../Api/CryptoApi'
 import defaultImg from "../constant/Logo.png"
 import "../index.css"
 
 
 const Cryptocurrencies = ({simplified}) => {
+
+  const {Paragraph} = Typography
   //  For getting the top 20 crypto currency in marget
   const count = simplified ? 20 : 100;
 
@@ -15,7 +17,7 @@ const Cryptocurrencies = ({simplified}) => {
   const [cryptos, setCryptos] = useState([])
    const [keyWord, setKeyWord]  = useState("");
   //  const [check, setCheck] = useState = (true)
-
+ console.log({cryptoList})
    useEffect( ()=>{
   
     const filteredTerms = cryptoList?.data?.coins.filter((coin) =>coin.name.toLowerCase().includes(keyWord.toLowerCase()));
@@ -53,6 +55,7 @@ const Cryptocurrencies = ({simplified}) => {
                 title = {`${rank} . ${name}`}
                 hoverable
                 >
+                  <Paragraph className = "text-center text-xl">{name}</Paragraph>
                   <p> Price : {millify (price) }</p>
                   <p> Market Cap : {millify (marketCap) }</p>
                   <p> Daily Change : {millify (change) } %</p>

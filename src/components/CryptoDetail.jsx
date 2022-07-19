@@ -8,19 +8,24 @@ ExclamationCircleOutlined, StopOutlined,
 TrophyOutlined, CheckOutlined, NumberOutlined, 
 ThunderboltOutlined } from '@ant-design/icons'
 
+
+import LineChart from './LineChart';
 import millify from 'millify';
 
 import "../index.css"
 
 // Api for getting crytop ID
-import { useGetCryptoIdQuery } from '../Api/CryptoApi';
+import { useGetCryptoIdQuery, 
+  // useGetCryptoHistoryQuery 
+} from '../Api/CryptoApi';
 const {Option } = Select;
 const CryptoDetail = () => {
 
   const {Title, Paragraph} = Typography
     const {id } = useParams();
-    const [timeStamp, settimeStamp ] = useState ("7d")
-    const {data : singleCrypto, isFetching } = useGetCryptoIdQuery(id)
+    const [timePeriod, settimePeriod ] = useState ("7d")
+    const {data : singleCrypto, isFetching } = useGetCryptoIdQuery(id);
+    // const {data : coinHistory} = useGetCryptoHistoryQuery({id,timePeriod})
     
     const cryptoDetails = singleCrypto?.data?.coin;
     console.log(cryptoDetails)
@@ -65,10 +70,10 @@ const CryptoDetail = () => {
 
       <div className='w-[90%] block relative mx-auto text-center my-2 p-2'>
         <Select
-        defaultValue={timeStamp}
+        defaultValue={"7d"}
         className = "w-[30em]"
         placeholder = "Select time duration"
-        onChange={(value) =>settimeStamp(value)}
+        onChange={(value) =>settimePeriod(value)}
         >
           {time?.map( (time, i) =>{
             return(<Option key = {i} >{time}</Option>)
@@ -76,8 +81,9 @@ const CryptoDetail = () => {
         </Select>
       </div>
 
-      {/* Todo Chart */}
-         
+      {/* Todo Chart, experiencing some weird bugs  in LineChart component*/}
+        
+      {/* <LineChart coinHistory={coinHistory} currentPrice={millify(price)} coinName={name} /> */}
          {/*  */}
       <section className='w-full max-w-full relative flex flex-col lg:flex-row '>
            <div className='block p-2 mt-2 w-full relative'>

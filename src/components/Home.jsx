@@ -2,7 +2,7 @@ import React from 'react'
 import millify from 'millify'
 import { Typography, Row, Statistic,Col } from 'antd'
 import { Link } from 'react-router-dom'
-import {News, Cryptocurrencies } from "../components"
+import {News, Cryptocurrencies} from "../components"
 import {useGetCryptosQuery } from "../Api/CryptoApi"
 import "../index.css"
 
@@ -22,7 +22,11 @@ const Home = () => {
   const {total,total24hVolume, totalCoins,totalExchanges, totalMarketCap, totalMarkets} = GlobalStats
 
   return (
-    <div className='w-full relative h-full bottomMag'>
+          <>
+       
+    
+
+    <div className='w-full h-full bottomMag'>
       <Title level={2} className="p-2 font-bold">Global Crypto Stats</Title>
 
       {/* Underline div */}
@@ -82,7 +86,8 @@ const Home = () => {
              </div>
 
     </div>
-  )
+    </>
+    )
 }
 
 export default Home

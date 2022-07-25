@@ -9,7 +9,7 @@ TrophyOutlined, CheckOutlined, NumberOutlined,
 ThunderboltOutlined } from '@ant-design/icons'
 
 
-import LineChart from './LineChart';
+// import LineChart from './LineChart';
 import millify from 'millify';
 
 import "../index.css"
@@ -18,6 +18,7 @@ import "../index.css"
 import { useGetCryptoIdQuery, 
   // useGetCryptoHistoryQuery 
 } from '../Api/CryptoApi';
+
 const {Option } = Select;
 const CryptoDetail = () => {
 
@@ -25,10 +26,11 @@ const CryptoDetail = () => {
     const {id } = useParams();
     const [timePeriod, settimePeriod ] = useState ("7d")
     const {data : singleCrypto, isFetching } = useGetCryptoIdQuery(id);
+  
     // const {data : coinHistory} = useGetCryptoHistoryQuery({id,timePeriod})
     
     const cryptoDetails = singleCrypto?.data?.coin;
-    console.log(cryptoDetails)
+    // console.log(cryptoDetails)
     
     if(isFetching) return <h3>lOADING</h3>
 

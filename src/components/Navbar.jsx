@@ -3,7 +3,7 @@ import {Link } from "react-router-dom"
 import Logo from "../constant/Binance-Logo.svg"
 import { MenuDta } from '../Data/MenuData'
 import {Button} from "antd"
-import {BsDashLg} from "react-icons/bs"
+import {GiHamburgerMenu} from "react-icons/gi"
 import "../index.css"
 
 const Navbar = () => {
@@ -51,12 +51,11 @@ const Navbar = () => {
             </div>
         </div>
    
-   <div className=''>
-   <div className = "absolute right-2 top-6 block md:hidden ">
-   <Button onClick={() => setisOpen(!isOpen)} className = "w-full p-6 block h-full">
-    <BsDashLg />
-    <BsDashLg />
-     </Button>
+   <div className='bg-white block'>
+   <div className = "absolute rounded bg-inherit right-2 top-6 block md:hidden ">
+   <button onClick={() => setisOpen(!isOpen)} className = "w-full px-6 block py-2 h-full">
+    <GiHamburgerMenu className='text-xl'/>
+     </button>
    </div>
    </div>
  

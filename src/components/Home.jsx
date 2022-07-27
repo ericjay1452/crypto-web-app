@@ -33,27 +33,27 @@ const Home = () => {
       <div className='block w-2/12 h-1 bg-gray-900 mb-3 ml-2 rounded'></div> 
 
       <Row className = "text-center p-6 mb-2 bg-gray-400">
-        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
+        <Col span = {12} xs={24} sm = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
           <Statistic value={millify(total)} title = "Total CryptoCurrencies" />
         </Col>
 
-        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
+        <Col span = {12} xs={24} sm = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
           <Statistic value={millify (totalExchanges)} title = "Total Exchange" />
         </Col>
 
-        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
+        <Col span = {12} xs={24} sm = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
           <Statistic value={millify (totalMarketCap)} title = "Total Market Cap" />
         </Col>
 
-        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
+        <Col span = {12} xs={24} sm = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
           <Statistic value={millify(total24hVolume)} title = "Total 24h Volume" />
         </Col>
 
-        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
+        <Col span = {12} xs={24} sm = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
           <Statistic value={millify(totalMarkets)} title = "Total Market" />
         </Col>
 
-        <Col span = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
+        <Col span = {12} xs={24} sm = {12} className="p-2 mb-4 font-thin cursor-pointer effectHover hover:transition-all hover:rounded">
           <Statistic value={millify(totalCoins)} title = "Total CryptoCurrencies" />
         </Col>
       </Row>

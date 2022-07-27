@@ -7,30 +7,27 @@ import {
 ExclamationCircleOutlined, StopOutlined, 
 TrophyOutlined, CheckOutlined, NumberOutlined, 
 ThunderboltOutlined } from '@ant-design/icons'
-
-
-// import LineChart from './LineChart';
+import LineChart from './LineChart';
 import millify from 'millify';
-
 import "../index.css"
 
-// Api for getting crytop ID
+// Api Query for getting crytop ID
 import { useGetCryptoIdQuery, 
   // useGetCryptoHistoryQuery 
 } from '../Api/CryptoApi';
 
-const {Option } = Select;
-const CryptoDetail = () => {
 
-  const {Title, Paragraph} = Typography
+const CryptoDetail = () => {
+    const {Option } = Select;
+    const {Title, Paragraph} = Typography
     const {id } = useParams();
     const [timePeriod, settimePeriod ] = useState ("7d")
     const {data : singleCrypto, isFetching } = useGetCryptoIdQuery(id);
+    console.log({singleCrypto})
   
     // const {data : coinHistory} = useGetCryptoHistoryQuery({id,timePeriod})
     
     const cryptoDetails = singleCrypto?.data?.coin;
-    // console.log(cryptoDetails)
     
     if(isFetching) return <h3>lOADING</h3>
 
@@ -38,6 +35,7 @@ const CryptoDetail = () => {
       numberOfExchanges, numberOfMarkets,
       symbol, marketCap, allTimeHigh,
        supply,links } = cryptoDetails;
+       console.log({price, name})
 
     const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
 
@@ -85,7 +83,12 @@ const CryptoDetail = () => {
 
       {/* Todo Chart, experiencing some weird bugs  in LineChart component*/}
         
-      {/* <LineChart coinHistory={coinHistory} currentPrice={millify(price)} coinName={name} /> */}
+        <div className = "w-full block my-2">
+          <div className = "w-[90%] mx-auto">
+          <LineChart singleCrypto = {singleCrypto} />
+          </div>
+        </div>
+      
          {/*  */}
       <section className='w-full max-w-full relative flex flex-col lg:flex-row '>
            <div className='block p-2 mt-2 w-full relative'>

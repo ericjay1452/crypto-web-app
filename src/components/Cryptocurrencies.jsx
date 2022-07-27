@@ -16,39 +16,37 @@ const Cryptocurrencies = ({simplified}) => {
   const {data:cryptoList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState([])
    const [keyWord, setKeyWord]  = useState("");
-  //  const [check, setCheck] = useState = (true)
-//  console.log({cryptoList})
+
    useEffect( ()=>{
   
     const filteredTerms = cryptoList?.data?.coins.filter((coin) =>coin.name.toLowerCase().includes(keyWord.toLowerCase()));
     setCryptos(filteredTerms )
-    // setCheck(false)
    }, [cryptoList, keyWord])
 
   if(isFetching) return <h2>Loading ...</h2>
 
   return (
           <>
-          {/* Only display this input on cryptocurrencies component as long as simplified id false */}
+          {/* Only display this input on cryptocurrencies component as long as simplified is false */}
           {!simplified && (
-          <div className = "relative w-full">
+             <div className = "relative w-full">
               <div className='w-6/12 mx-auto my-8'>
               <Input placeholder='Search Crypto' 
               onChange={(e)=>setKeyWord(e.target.value)}
               value = {keyWord}
               />
               </div>
-              {/* <p className = "text-center">{check ? `` : ``}</p>  */}
           </div>
            )}
-    <div className='relative w-full block'>
+           
+    <div className='relative w-full block effect py-4'>
       <Row className='justify-evenly items-center'>
         {
           cryptos?.map( (currency) =>{
             const {uuid, rank, name, iconUrl, price, marketCap, change} = currency;
             
                return (
-            <Col  xs = {24} sm={12} lg = {4}  key={uuid} className = "m-1 effectHover2">
+            <Col  xs = {24} sm={6} lg = {5}  key={uuid} className = "m-1 effectHover2">
               <Link to = {`/cryptodetail/${uuid}`} className = "effectHover">
                 <Card className= "hover:transition-all rounded-3xl"
                 extra = {<img src = {`${iconUrl}` || `${defaultImg}`} alt = {`${name}`} id = "img2" className ="max-w-full w-full"/> }
